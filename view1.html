@@ -1,0 +1,53 @@
+<div class="container" ng-controller="View1Ctrl">
+
+    <div class="col-md-12 project-section">
+       <div class="row">
+           <div class="col-md-4 col-sm-4 col-xs-12">
+               <h3>Project List</h3>
+           </div>
+           <div class="col-md-4 col-sm-4 col-xs-12">
+
+           </div>
+           <div class="col-md-4 col-sm-4 col-xs-12">
+               <form class="navbar-form navbar-left">
+                   <div class="input-group">
+                       <input type="text" class="form-control" placeholder="Search" ng-model="search.country">
+                       <div class="input-group-btn">
+                           <button class="btn btn-default" type="submit">
+                               <i class="glyphicon glyphicon-search"></i>
+                           </button>
+                       </div>
+                   </div>
+               </form>
+           </div>
+       </div>
+    </div>
+
+    <hr>
+
+    <div class="col-md-4 col-sm-4 col-xs-12 project-list" ng-repeat="project in projectList | filter:search">
+        <div class="panel">
+            <div class="panel-heading">{{project.by}}
+                <span class="pull-right">
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true" ng-click="showDetails(project)"></i>
+                </span>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>Country</td>
+                        <td>{{project.country}}</td>
+                    </tr>
+                    <tr>
+                        <td>Amount</td>
+                        <td>{{project['amt.pledged']}}</td>
+                    </tr>
+                    <tr>
+                        <td>No. of Backers</td>
+                        <td>{{project['num.backers']}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
