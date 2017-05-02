@@ -1,0 +1,24 @@
+
+<div class="container" ng-controller="View2Ctrl">
+  <div class="jumbotron" >
+    <h1>{{projectDetails.by}}</h1>
+    <p>{{projectDetails.blurb}}</p>
+    <p>{{projectDetails.title}}</p>
+
+    <a href="https://{{projectDetails.url}}" target="_blank">My Link</a>
+
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item">country <span class="badge">{{projectDetails.country}}</span></li>
+    <li class="list-group-item">location <span class="badge">{{projectDetails.location}}</span></li>
+    <li class="list-group-item">state <span class="badge">{{projectDetails.state}}</span></li>
+    <li class="list-group-item">Type <span class="badge">{{projectDetails.type}}</span></li>
+    <li class="list-group-item">Amount Pledged <span class="badge">{{projectDetails['amt.pledged']}}</span></li>
+    <li class="list-group-item">No. of Backers <span class="badge">{{projectDetails['num.backers']}}</span></li>
+
+    <li class="list-group-item">Funded <span class="badge">{{projectDetails['percentage.funded']}}</span></li>
+    <li class="list-group-item">End Time <span class="badge">{{projectDetails['end.time']}}</span></li>
+  </ul>
+</div>
+
